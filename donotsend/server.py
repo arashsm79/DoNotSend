@@ -12,9 +12,9 @@ from scapy.layers.dns import DNSRR, DNS, dnstypes, struct
 from scapy.layers.inet import IP, UDP
 from scapy.sendrecv import send, sniff
 
-from converter import Content, Domain
-from packet import Packet
-from utils import DNSAnswer, get_ip_from_hostname, init_logger
+from donotsend.converter import Content, Domain
+from donotsend.packet import Packet
+from donotsend.utils import DNSAnswer, get_ip_from_hostname, init_logger
 
 
 def socket_server(ip: str, port: int = 53):

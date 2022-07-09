@@ -7,7 +7,7 @@ from random import randint
 from scapy.layers.dns import DNS, DNSQR, dnstypes
 from scapy.layers.inet import IP, UDP
 
-from utils import DNSHeaders
+from donotsend.utils import DNSHeaders
 
 
 def build_tos(

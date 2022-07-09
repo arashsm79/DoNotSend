@@ -6,9 +6,9 @@ from scapy.layers.dns import DNS, struct
 from scapy.layers.inet import UDP, ICMP, IPerror
 from scapy.sendrecv import sr1
 
-from converter import Domain, Content
-from packet import Packet
-from utils import init_logger, get_ip_from_hostname
+from donotsend.converter import Domain, Content
+from donotsend.packet import Packet
+from donotsend.utils import init_logger, get_ip_from_hostname
 
 
 logger = None

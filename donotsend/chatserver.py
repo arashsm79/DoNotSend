@@ -5,7 +5,7 @@ import secrets
 import time
 from typing import List, Union
 
-from server import main
+from donotsend.server import main
 
 
 MESSAGE_LIMIT = 10000
@@ -61,11 +61,12 @@ class ChatServer:
     def register_user(self, content: List[str], ip: str) -> Union[str, bool]:
         if USER_LIMIT > 0 and len(self.users) < USER_LIMIT:
             word, *_ = content
-            usertag = User.generate_usertag(word)
             already_existing = len(
                 [u for u in self.users.values() if u.tag == word]
             )
-            self.users[usertag] = User(word, ip, already_existing or "")
+            user = User(word, ip, already_existing or "")
+            usertag = User.generate_usertag(user.name)
+            self.users[usertag] = user
             return f"Registered as {usertag}."
         return False  # avoid having too many users for now
 
